@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRAVENCE | מספרת פרימיום</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Home Screen -->
+    <div id="homeScreen" class="screen active">
+        <div class="hero-section">
+            <div class="hero-image">
+                <img src="hero.png" alt="BRAVENCE Interior">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <h1 class="brand-name">BRAVENCE</h1>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="greeting">
+                <h2>שלום, עומר</h2>
+                <p class="subtitle">לילה טוב</p>
+            </div>
+
+            <button class="cta-button" onclick="startBooking()">
+                הזמנת תור
+            </button>
+
+            <div class="staff-carousel-container">
+                <div class="staff-carousel">
+                    <div class="staff-member" onclick="selectStaffFromHome(1)">
+                        <img src="barber1.png" alt="ליאם">
+                    </div>
+                    <div class="staff-member" onclick="selectStaffFromHome(2)">
+                        <img src="barber2.png" alt="ירון">
+                    </div>
+                    <div class="staff-member" onclick="selectStaffFromHome(3)">
+                        <img src="barber3.png" alt="אמיר">
+                    </div>
+                    <div class="staff-member" onclick="selectStaffFromHome(4)">
+                        <img src="barber4.png" alt="עמית">
+                    </div>
+                    <div class="staff-member" onclick="selectStaffFromHome(5)">
+                        <img src="barber5.png" alt="קווין">
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h3>הכירו אותנו</h3>
+                <div class="about-card">
+                    <div class="about-image">
+                        <img src="hero.png" alt="BRAVENCE">
+                    </div>
+                    <div class="about-text">
+                        <p>הכירו את BRAVENCE ב-BRAVENCE | 515 אותנו כל הם מספרה – אותנו בית ליציריות, סגנון, ואנשים שלא מתפשרים על פחות מושלם. כאן לכל תספורת היא הרבה מעבר למראה – היא אומנות, אמינות, וביטוי ייחודי שלך</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-section">
+                <h3>דברו איתנו</h3>
+                <div class="contact-card">
+                    <h4>באר שבע</h4>
+                    <p>רמבם 4</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Select Staff Screen -->
+    <div id="selectStaffScreen" class="screen">
+        <div class="screen-header">
+            <button class="back-button" onclick="goBack()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <h2>בחירת איש צוות</h2>
+            <div class="header-spacer"></div>
+        </div>
+
+        <div class="screen-content">
+            <p class="screen-subtitle">בחרת את LIAM ל</p>
+            
+            <div class="staff-list">
+                <div class="staff-card" onclick="selectStaff(1, 'LIAM')">
+                    <span class="staff-name">LIAM</span>
+                    <img src="barber1.png" alt="LIAM" class="staff-avatar">
+                </div>
+                <div class="staff-card" onclick="selectStaff(2, 'ירון')">
+                    <span class="staff-name">ירון</span>
+                    <img src="barber2.png" alt="ירון" class="staff-avatar">
+                </div>
+                <div class="staff-card" onclick="selectStaff(3, 'אמיר')">
+                    <span class="staff-name">אמיר</span>
+                    <img src="barber3.png" alt="אמיר" class="staff-avatar">
+                </div>
+                <div class="staff-card" onclick="selectStaff(4, 'עמית')">
+                    <span class="staff-name">עמית</span>
+                    <img src="barber4.png" alt="עמית" class="staff-avatar">
+                </div>
+                <div class="staff-card" onclick="selectStaff(5, 'קווין')">
+                    <span class="staff-name">קווין</span>
+                    <img src="barber5.png" alt="קווין" class="staff-avatar">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Select Service Screen -->
+    <div id="selectServiceScreen" class="screen">
+        <div class="screen-header">
+            <button class="back-button" onclick="goBack()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <h2>בחירת טיפול</h2>
+            <div class="header-spacer"></div>
+        </div>
+
+        <div class="screen-content">
+            <p class="screen-subtitle">בחרת את LIAM ל</p>
+            
+            <div class="service-list">
+                <div class="service-card" onclick="selectService('תספורת', 80)">
+                    <div class="service-info">
+                        <h3 class="service-name">תספורת</h3>
+                        <div class="service-meta">
+                            <span class="service-icon">✂️</span>
+                            <span class="service-duration">זמן טיפול: 20 דק׳</span>
+                        </div>
+                    </div>
+                    <div class="service-price">₪ 80</div>
+                </div>
+                <div class="service-card" onclick="selectService('תספורת וזקן', 90)">
+                    <div class="service-info">
+                        <h3 class="service-name">תספורת וזקן</h3>
+                        <div class="service-meta">
+                            <span class="service-icon">✂️</span>
+                            <span class="service-duration">זמן טיפול: 20 דק׳</span>
+                        </div>
+                    </div>
+                    <div class="service-price">₪ 90</div>
+                </div>
+                <div class="service-card special" onclick="selectService('All Scissors', 120)">
+                    <div class="service-info">
+                        <h3 class="service-name">✂️ All Scissors</h3>
+                        <div class="service-meta">
+                            <span class="service-icon">✂️</span>
+                            <span class="service-duration">זמן טיפול: 30 דק׳</span>
+                        </div>
+                    </div>
+                    <div class="service-price">₪ 120</div>
+                </div>
+                <div class="service-card" onclick="selectService('פרימיום (תור כפול)', 170)">
+                    <div class="service-info">
+                        <h3 class="service-name">פרימיום (תור כפול)</h3>
+                        <div class="service-meta">
+                            <span class="service-icon">✂️</span>
+                            <span class="service-duration">זמן טיפול: 40 דק׳</span>
+                        </div>
+                    </div>
+                    <div class="service-price">₪ 170</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Select Date Screen -->
+    <div id="selectDateScreen" class="screen">
+        <div class="screen-header">
+            <button class="back-button" onclick="goBack()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <h2>בחירת תאריך</h2>
+            <div class="header-spacer"></div>
+        </div>
+
+        <div class="screen-content">
+            <p class="screen-subtitle">בחרת את LIAM לתספורת ב</p>
+            
+            <div class="date-list">
+                <button class="date-button available" onclick="selectDate('היום, 11.11')">
+                    היום, 11.11
+                </button>
+                <button class="date-button available" onclick="selectDate('מחר, 12.11')">
+                    מחר, 12.11
+                </button>
+                <button class="date-button available" onclick="selectDate('חמישי, 13.11')">
+                    חמישי, 13.11
+                </button>
+                <button class="date-button available" onclick="selectDate('שישי, 14.11')">
+                    שישי, 14.11
+                </button>
+                <button class="date-button available" onclick="selectDate('ראשון, 16.11')">
+                    ראשון, 16.11
+                </button>
+                <button class="date-button available" onclick="selectDate('שני, 17.11')">
+                    שני, 17.11
+                </button>
+                <button class="date-button available" onclick="selectDate('שלישי, 18.11')">
+                    שלישי, 18.11
+                </button>
+                
+                <div class="availability-legend">
+                    <div class="legend-item">
+                        <span class="legend-indicator available-indicator"></span>
+                        <span>יש תורים</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-indicator unavailable-indicator"></span>
+                        <span>אין תורים</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Select Time Screen -->
+    <div id="selectTimeScreen" class="screen">
+        <div class="screen-header">
+            <button class="back-button" onclick="goBack()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <h2>בחירת שעה</h2>
+            <div class="header-spacer"></div>
+        </div>
+
+        <div class="screen-content">
+            <p class="screen-subtitle">בחר שעה להזמנה</p>
+            
+            <div class="time-grid">
+                <button class="time-button" onclick="selectTime('09:00')">09:00</button>
+                <button class="time-button" onclick="selectTime('09:30')">09:30</button>
+                <button class="time-button" onclick="selectTime('10:00')">10:00</button>
+                <button class="time-button" onclick="selectTime('10:30')">10:30</button>
+                <button class="time-button" onclick="selectTime('11:00')">11:00</button>
+                <button class="time-button" onclick="selectTime('11:30')">11:30</button>
+                <button class="time-button" onclick="selectTime('12:00')">12:00</button>
+                <button class="time-button" onclick="selectTime('12:30')">12:30</button>
+                <button class="time-button" onclick="selectTime('13:00')">13:00</button>
+                <button class="time-button" onclick="selectTime('13:30')">13:30</button>
+                <button class="time-button" onclick="selectTime('14:00')">14:00</button>
+                <button class="time-button" onclick="selectTime('14:30')">14:30</button>
+            </div>
+
+            <div class="waitlist-section">
+                <div class="waitlist-question">
+                    <span>חייב תור דחוף?</span>
+                    <span>לא מצאת תור לזמן שלך?</span>
+                </div>
+                <div class="waitlist-actions">
+                    <button class="waitlist-button secondary" onclick="joinWaitlist()">
+                        כניסה לרשימת המתנה
+                    </button>
+                    <button class="waitlist-button primary" onclick="showAvailableTimes()">
+                        התורים הקרובים ביותר
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- My Appointments Screen -->
+    <div id="appointmentsScreen" class="screen">
+        <div class="screen-header">
+            <h2>התורים שלי</h2>
+        </div>
+
+        <div class="screen-content">
+            <div id="appointmentsList" class="appointments-list">
+                <div class="empty-state">
+                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none">
+                        <rect x="3" y="6" width="18" height="15" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                    <p>אין תורים מתוזמנים</p>
+                    <button class="cta-button" onclick="navigateTo('home')">הזמן תור חדש</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Screen -->
+    <div id="profileScreen" class="screen">
+        <div class="screen-header">
+            <h2>הפרופיל שלי</h2>
+        </div>
+
+        <div class="screen-content">
+            <div class="profile-avatar">
+                <div class="avatar-circle">
+                    <span>ע</span>
+                </div>
+            </div>
+
+            <div class="profile-info">
+                <div class="info-card">
+                    <label>שם מלא</label>
+                    <input type="text" value="עומר" readonly>
+                </div>
+                <div class="info-card">
+                    <label>טלפון</label>
+                    <input type="tel" value="050-1234567" readonly>
+                </div>
+                <div class="info-card">
+                    <label>אימייל</label>
+                    <input type="email" value="omer@example.com" readonly>
+                </div>
+            </div>
+
+            <div class="profile-actions">
+                <button class="action-button">ערוך פרטים</button>
+                <button class="action-button secondary">היסטוריית תורים</button>
+                <button class="action-button danger">התנתק</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <button class="nav-item" onclick="navigateTo('profile')">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>עוד</span>
+        </button>
+        <button class="nav-item" onclick="navigateTo('appointments')">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <rect x="3" y="6" width="18" height="15" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+            <span>תורים</span>
+        </button>
+        <button class="nav-item center" onclick="navigateTo('home')">
+            <div class="center-logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                </svg>
+            </div>
+        </button>
+        <button class="nav-item" onclick="startBooking()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <rect x="3" y="6" width="18" height="15" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M12 11v6M9 14h6" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+            <span>הזמנות</span>
+        </button>
+        <button class="nav-item active" onclick="navigateTo('home')">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M9 22V12h6v10" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+            <span>בית</span>
+        </button>
+    </nav>
+
+    <script src="app.js"></script>
+</body>
+</html>
